@@ -1,0 +1,26 @@
+{
+  "name": "ramazanuz_bot",
+  "version": "1.0.0",
+  "description": "@Ramazanuz_bot  (2021 yili )",
+  "main": "index.js",
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "node-telegram-bot-api": "^0.52.0",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mensenvau/ramazanuz_bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mensenvau/ramazanuz_bot/issues"
+  },
+  "homepage": "https://github.com/mensenvau/ramazanuz_bot#readme"
+}
