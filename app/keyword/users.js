@@ -26,6 +26,13 @@ module.exports = {
             ],
         },
 
+        next: {
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            keyboard: [
+                ['◀️ Орқага'],
+            ],
+        },
         address: (adr, k = "taqim") => {
             const arr = [];
             for (let i = 0; i < adr.length; i += 2) {
@@ -78,6 +85,14 @@ module.exports = {
                 ['◀️ Orqaga'],
             ],
         },
+        next: {
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            keyboard: [
+                ['◀️ Orqaga'],
+            ],
+        },
+
 
         address: (adr, k = "taqim") => {
             const arr = [];

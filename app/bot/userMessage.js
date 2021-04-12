@@ -21,6 +21,17 @@ const userMessage = async(bot, msg, user) => {
 
 
 
+    //start yuborganda
+    if (tx == '/start' || tx == '◀️ Orqaga' || tx == '◀️ Орқага') {
+        await db.query("UPDATE users SET steep=1 WHERE chat_id=?", [chatId]);
+        bot.sendMessage(chatId, lang["id1"], {
+            parse_mode: "HTML",
+            reply_markup: key.start,
+        })
+        return ;
+    }
+
+
     //savol-javob  2-qisim
     if (user.steep == 2) {
         await db.query("UPDATE users SET steep=1 WHERE chat_id=?", [chatId]);
@@ -37,16 +48,6 @@ const userMessage = async(bot, msg, user) => {
             parse_mode: "HTML"
         })
         return;
-    }
-
-
-    //start yuborganda
-    if (tx == '/start' || tx == '◀️ Orqaga' || tx == '◀️ Орқага') {
-        await db.query("UPDATE users SET steep=1 WHERE chat_id=?", [chatId]);
-        bot.sendMessage(chatId, lang["id1"], {
-            parse_mode: "HTML",
-            reply_markup: key.start,
-        })
     }
 
     //sozlamalar
@@ -100,13 +101,13 @@ const userMessage = async(bot, msg, user) => {
         await db.query("UPDATE users SET steep=2 WHERE chat_id=?", [chatId]);
         bot.sendMessage(chatId, lang["id9"], {
             parse_mode: "HTML",
-            reply_markup: key.start,
+            reply_markup: key.next,
         })
     }
 
 
 
-    //error >  hozicha
+     //error >  hozicha
     if ( tx == "Asmaul husna" || tx == '☝️Maruzalar' || tx=='✍️ Ismga tabrik'
          || tx=='☝️Марузалар' || tx=="Aсмаул ҳусна" || tx=='✍️ Исмга табрик'
          || tx == "📖 Qur'on tilovati va darslari" || tx == "📖 Қуръон тиловати ва дарслари") {
