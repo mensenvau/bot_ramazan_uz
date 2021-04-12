@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // @botFather dan olasiz bu tokeni
-const token = '1723879599:AAEUBV-eVUJ49nri9mgX8jm0LLNNeYF5d5I';
+const token = '1728904512:AAGgLs0sP30j27j6V9iu4kiaOsikD6cnj_I';
 
 // polling usulda botni yoqtig .
 const bot = new TelegramBot(token, { polling: true });

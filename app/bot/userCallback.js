@@ -31,9 +31,9 @@ const userCallback = async(bot, msg, user) => {
         let did = data.replace("taqim", "");
         let img = "";
         try {
-            img = fs.readFileSync(path.join(__dirname + "../../../public/taqvim/" + did + ".png"))
+            img = fs.readFileSync(path.join(__dirname + `../../../public/taqvim/${did}${user.lang || "lotin"}.jpg`))
         } catch {
-            img = fs.readFileSync(path.join(__dirname + "../../../public/taqvim/1.png"))
+            img = fs.readFileSync(path.join(__dirname + `../../../public/taqvim/1.png`))
         }
 
         bot.sendPhoto(chatId, img, {

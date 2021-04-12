@@ -14,7 +14,8 @@ module.exports = {
         "id10": function(tx, soni) {
             return `Сиз қидирган : ${tx}. \nЖами: ${soni} та савол топилди .`
         },
-        "id11": "Кўриш"
+        "id11": "Кўриш",
+        "err":"😔 Афсуски ҳозирча бизда ушбу бўлим вақтинча ишламаяпти! Иншаоллоҳ яқин кунларда ишга туширамиз."
     },
     "lotin": {
         "id1": "🤗 Tashrifingiz uchun minnaddormiz, ushbu bot sizga<b>Ramazon taqvimlarini bilishda, namoz vaqtlarini bilishda, hadislar, Qur'oni karimni o'rganishda, maruzalarni eshitishda, Ollohning 99 ismini yodlashda, ismlarga tabrik yozishda, kunlik zikr qilishni eslatishda va boshqa ko'plab imkoniyatlari </b> bilan sizga foyda olib kelishida umidvormiz!\n\n<i>Botni savob yo'lida do'stlaringizga ulashing! </i>\n\n👉 @Ramazanuz_bot",
@@ -31,6 +32,7 @@ module.exports = {
         "id10": function(tx, soni) {
             return `Siz qidirgan : ${tx}. \nJami: ${soni} ta savol topildi .`
         },
-        "id11": "Ko'rish"
+        "id11": "Ko'rish",
+        "err":"😔 Afsuski hozircha bizda ushbu bo'lim vaqtincha ishlamayapti!  Inshaolloh yaqin kunlarda ishga tushiramiz."
     }
 }
