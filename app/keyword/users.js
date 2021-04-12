@@ -13,7 +13,7 @@ module.exports = {
         },
         lang: {
             inline_keyboard: [
-                [{text: "Кирил", callback_data: "kiril"}, {text: "Лотин", callback_data: "lotin"}],
+                [{ text: "Кирил", callback_data: "kiril" }, { text: "Лотин", callback_data: "lotin" }],
             ]
         },
 
@@ -26,12 +26,12 @@ module.exports = {
             ],
         },
 
-        address: (adr,k="taqim") => {
+        address: (adr, k = "taqim") => {
             const arr = [];
             for (let i = 0; i < adr.length; i += 2) {
                 let a = [];
-                a.push({text: adr[i].namek, callback_data: k + adr[i].id})
-                a.push({text: adr[i + 1].namek, callback_data: k + adr[i + 1].id})
+                a.push({ text: adr[i].namek, callback_data: k + adr[i].id })
+                a.push({ text: adr[i + 1].namek, callback_data: k + adr[i + 1].id })
                 arr.push(a)
             }
             // arr.push( [{text: "🏢 Menyu", callback_data: "menyu"}])
@@ -39,11 +39,20 @@ module.exports = {
                 inline_keyboard: arr,
             }
         },
+        quron: {
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            keyboard: [
+                ["Қуръон тиловати", "Қуръон дарслари"],
+                ["Қуръон китоби"],
+                ['◀️ Орқага'],
+            ],
+        }
 
     },
 
 
-    lotin : {
+    lotin: {
         start: {
             resize_keyboard: true,
             one_time_keyboard: true,
@@ -57,7 +66,7 @@ module.exports = {
         },
         lang: {
             inline_keyboard: [
-                [{text: "Kiril", callback_data: "kiril"}, {text: "Lotin", callback_data: "lotin"}],
+                [{ text: "Kiril", callback_data: "kiril" }, { text: "Lotin", callback_data: "lotin" }],
             ]
         },
 
@@ -70,19 +79,29 @@ module.exports = {
             ],
         },
 
-        address: (adr,k="taqim") => {
+        address: (adr, k = "taqim") => {
             const arr = [];
             for (let i = 0; i < adr.length; i += 2) {
                 let a = [];
-                a.push({text: adr[i].namel, callback_data: k + adr[i].id})
-                a.push({text: adr[i + 1].namel, callback_data: k + adr[i + 1].id})
+                a.push({ text: adr[i].namel, callback_data: k + adr[i].id })
+                a.push({ text: adr[i + 1].namel, callback_data: k + adr[i + 1].id })
                 arr.push(a)
             }
             // arr.push( [{text: "🏢 Menyu", callback_data: "menyu"}])
             return {
                 inline_keyboard: arr,
             }
+        },
+        quron: {
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            keyboard: [
+                ["Qur'on tilovati", "Qur'on darslari"],
+                ["Qur'on kitobi"],
+                ['◀️ Orqaga'],
+            ],
         }
+
     },
 
 
