@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: "@Aa12345",
+    password: "12345",
     database: 'botc',
     waitForConnections: true,
     connectionLimit: 10,
