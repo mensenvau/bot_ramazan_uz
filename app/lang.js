@@ -16,7 +16,9 @@ module.exports = {
         },
         "id11": "Кўриш",
         "err":"😔 Афсуски ҳозирча бизда ушбу бўлим вақтинча ишламаяпти! Иншаоллоҳ яқин кунларда ишга туширамиз."
-    },
+   ,
+           "id12": "<b>Саҳарлик  (оғиз ёпиш) дуоси:</b>\nНавайту ан асума совма шаҳри Рамазона минал фажри илал мағриби, холисан лиллаҳи таъалаа. Аллоҳу акбар.\n- - - - - - - - - - - - - - - - - - - - - - -\n<b>Ифторлик  (оғиз очиш) дуоси:</b>\nАллоҳумма лака сумту ва бика ааманту ва ъалайка таваккалту ва ъалаа ризқика афтарту, фағфирли зунубий яа Ғоффару маа қоддамту ва маа аххорту."
+},
     "lotin": {
         "id1": "🤗 Tashrifingiz uchun minnaddormiz, ushbu bot sizga<b>Ramazon taqvimlarini bilishda, namoz vaqtlarini bilishda, hadislar, Qur'oni karimni o'rganishda, maruzalarni eshitishda, Ollohning 99 ismini yodlashda, ismlarga tabrik yozishda, kunlik zikr qilishni eslatishda va boshqa ko'plab imkoniyatlari </b> bilan sizga foyda olib kelishida umidvormiz!\n\n<i>Botni savob yo'lida do'stlaringizga ulashing! </i>\n\n👉 @Ramazanuz_bot",
         "id2": "⚙️Sozlamalar :",
@@ -34,5 +36,8 @@ module.exports = {
         },
         "id11": "Ko'rish",
         "err":"😔 Afsuski hozircha bizda ushbu bo'lim vaqtincha ishlamayapti!  Inshaolloh yaqin kunlarda ishga tushiramiz."
+    ,
+        "id12":"<b>Saharlik  (og‘iz yopish) duosi:</b>\nNavaytu an asuma sovma shahri Ramazona minal fajri ilal mag‘ribi, xolisan lillahi ta’alaa. Allohu akbar.\n- - - - - - - - - - - - - - - - - - - - - - -\n<b>Iftorlik  (og‘iz ochish) duosi:</b>\nAllohumma laka sumtu va bika aamantu va ’alayka tavakkaltu va ’alaa rizqika aftartu, fag‘firli zunubiy yaa Gʻoffaru maa qoddamtu va maa axxortu."
+
     }
 }

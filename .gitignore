@@ -1,2 +1,3 @@
 ./node_modules
 ./app/botc.js
+app/db/db.js

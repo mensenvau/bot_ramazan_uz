@@ -46,15 +46,25 @@ const userCallback = async(bot, msg, user) => {
     if (isData == "hudud") {
         let did = data.replace("hudud", "");
         let adr = await db.query("SELECT *FROM address WHERE id=?", [did]);
-        await db.query("UPDATE users SET steep=1,address=? WHERE chat_id=?", [adr[0][0].namel, chatId]);
+        await db.query("UPDATE users SET steep=1,address=? WHERE chat_id=?", [did, chatId]);
         bot.sendMessage(chatId, lang["id7"](`'${adr[0][0].namel}'`), {
             parse_mode: "HTML",
-            reply_markup: key.settings,
+            reply_markup: key.start,
         })
         return;
     }
 
-
+    if(isData=="tilvt"){
+        let did = data.replace("tilvt", "");
+        let qtid = await db.query("SELECT *FROM qtilovat WHERE id=?", [did]);
+        console.log("https://drive.google.com/file/d/13vm7T9zkiF5sz6I7lysfprEWw3koWXm6/view?usp=sharing")
+        bot.sendDocument(chatId, " https://doc-0c-ak-docs.googleusercontent.com/docs/securesc/t9v1esl8o4va4600u8pqc1qg1n8750g8/s65ej4uat3h4s5esl74hp3j2559ilt03/1618290900000/09933436537247629246/09933436537247629246/13vm7T9zkiF5sz6I7lysfprEWw3koWXm6?e=download&authuser=0&nonce=27hfn46fbv6r4&user=09933436537247629246&hash=umptgkgt8cs7rqohjh91l0bsaabsnjl5" , {
+            caption:qtid[0][0].mtext ,
+            parse_mode: "HTML",
+            reply_markup: key.start
+        })
+        return;
+    }
 }
 
 

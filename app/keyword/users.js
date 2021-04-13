@@ -51,9 +51,12 @@ module.exports = {
             one_time_keyboard: true,
             keyboard: [
                 ["Қуръон тиловати", "Қуръон дарслари"],
-                ["Қуръон китоби"],
                 ['◀️ Орқага'],
             ],
+        },
+        share :  { inline_keyboard: [
+                [{text:'forward me to groups' , 'switch_inline_query' : 'this is a message'}]
+            ]
         }
 
     },
@@ -112,12 +115,33 @@ module.exports = {
             one_time_keyboard: true,
             keyboard: [
                 ["Qur'on tilovati", "Qur'on darslari"],
-                ["Qur'on kitobi"],
                 ['◀️ Orqaga'],
             ],
-        }
+        },
+        qt:(qt,k)=>{
+            const arr = [];
 
+            for(let i=0;i<qt.length;i+=5){
+                let a = [];
+                for(let j=i;j<i+5;j++) {
+                    if(qt[j])
+                        a.push({text: j+1, callback_data: k + qt[j].id})
+                }
+                arr.push(a)
+            }
+
+            return {
+                    inline_keyboard: arr,
+                }
+            }
+            ,
+        share :  {
+            inline_keyboard: [
+                [{text:'forward me to groups' , switch_inline_query : 'this is a message'}]
+            ]
+        }
     },
+
 
 
 }

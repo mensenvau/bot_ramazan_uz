@@ -19,4 +19,6 @@ module.exports = callbackQueryOnFunction = async (msg)=>{
             require('./userCallback')(bot,msg,a[0][0]);
         }
 
+
+        bot.answerCallbackQuery(msg.id,"DataTech.uz");
 }

@@ -67,6 +67,22 @@ const userMessage = async(bot, msg, user) => {
         })
     }
 
+    //'⏳ Бугун'
+    if (tx == '⏳ Бугун' || tx == '⏳ Bugun') {
+      if(user.address) {
+          console.log(key.share)
+          bot.sendPhoto(chatId, "https://ramazanuz.herokuapp.com/"+user.address, {
+              caption: lang["id12"],
+              parse_mode: "HTML",
+              // reply_markup: key.share,
+          })
+          return ;
+      }
+      else {
+          tx = '📍 Hududingiz'
+      }
+    }
+
     //sozlamalar >  hudud
     if (tx == '📍 Hududingiz' || tx == '📍 Ҳудудингиз') {
         let adr = await db.query("SELECT *FROM address")
@@ -79,7 +95,6 @@ const userMessage = async(bot, msg, user) => {
     //taqvim
     if (tx == '🗓  Taqvim' || tx == '🗓  Тақвим') {
         let adr = await db.query("SELECT *FROM address");
-
         bot.sendMessage(chatId, lang["id4"], {
             parse_mode: "HTML",
             reply_markup: key.address(adr[0], "taqim"),
@@ -87,13 +102,13 @@ const userMessage = async(bot, msg, user) => {
     }
 
 
-    // // Qur'on tilovati va darslari
-    // if (tx == "📖 Qur'on tilovati va darslari" || tx == "📖 Қуръон тиловати ва дарслари") {
-    //     bot.sendMessage(chatId, lang["id8"], {
-    //         parse_mode: "HTML",
-    //         reply_markup: key.quron,
-    //     })
-    // }
+    // Qur'on tilovati va darslari
+    if (tx == "📖 Qur'on tilovati va darslari" || tx == "📖 Қуръон тиловати ва дарслари") {
+        bot.sendMessage(chatId, lang["id8"], {
+            parse_mode: "HTML",
+            reply_markup: key.quron,
+        })
+    }
 
 
     // '💬 Савол-жавоб'
@@ -105,6 +120,17 @@ const userMessage = async(bot, msg, user) => {
         })
     }
 
+
+    //"Qur'on" =>"Qur'on tilovati"
+    if (tx=="Qur'on tilovati"  || tx=="Қуръон тиловати") {
+        let qt= await db.query("SELECT *FROM qtilovat ");
+        let mtx = "";
+        for(let i=0;i<qt[0].length;i++) mtx+=qt[0][i].id+") "+qt[0][i].name+"\n" ;
+        bot.sendMessage(chatId, mtx , {
+            parse_mode: "HTML" ,
+            reply_markup: key.qt(qt[0],"tilvt"),
+        })
+    }
 
 
      //error >  hozicha
