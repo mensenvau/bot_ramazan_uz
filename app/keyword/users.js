@@ -37,8 +37,8 @@ module.exports = {
             const arr = [];
             for (let i = 0; i < adr.length; i += 2) {
                 let a = [];
-                a.push({ text: adr[i].namek, callback_data: k + adr[i].id })
-                a.push({ text: adr[i + 1].namek, callback_data: k + adr[i + 1].id })
+                if(adr[i])a.push({ text: adr[i].namek, callback_data: k + adr[i].id })
+                if(adr[i + 1])a.push({ text: adr[i + 1].namek, callback_data: k + adr[i + 1].id })
                 arr.push(a)
             }
             // arr.push( [{text: "🏢 Menyu", callback_data: "menyu"}])
@@ -54,11 +54,21 @@ module.exports = {
                 ['◀️ Орқага'],
             ],
         },
-        share :  { inline_keyboard: [
-                [{text:'forward me to groups' , 'switch_inline_query' : 'this is a message'}]
-            ]
-        }
+        qt:(qt,k)=>{
+            const arr = [];
 
+            for(let i=0;i<qt.length;i+=5){
+                let a = [];
+                for(let j=i;j<i+5;j++) {
+                    if(qt[j])
+                        a.push({text: j+1, callback_data: k + qt[j].id})
+                }
+                arr.push(a)
+            }
+            return {
+                inline_keyboard: arr,
+            }
+         }
     },
 
 
@@ -101,8 +111,8 @@ module.exports = {
             const arr = [];
             for (let i = 0; i < adr.length; i += 2) {
                 let a = [];
-                a.push({ text: adr[i].namel, callback_data: k + adr[i].id })
-                a.push({ text: adr[i + 1].namel, callback_data: k + adr[i + 1].id })
+                if(adr[i])a.push({ text: adr[i].namel, callback_data: k + adr[i].id })
+                if(adr[i + 1]) a.push({ text: adr[i + 1].namel, callback_data: k + adr[i + 1].id })
                 arr.push(a)
             }
             // arr.push( [{text: "🏢 Menyu", callback_data: "menyu"}])
@@ -134,14 +144,6 @@ module.exports = {
                     inline_keyboard: arr,
                 }
             }
-            ,
-        share :  {
-            inline_keyboard: [
-                [{text:'forward me to groups' , switch_inline_query : 'this is a message'}]
-            ]
-        }
+
     },
-
-
-
 }

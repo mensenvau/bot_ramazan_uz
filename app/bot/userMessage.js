@@ -34,7 +34,7 @@ const userMessage = async(bot, msg, user) => {
 
     //savol-javob  2-qisim
     if (user.steep == 2) {
-        await db.query("UPDATE users SET steep=1 WHERE chat_id=?", [chatId]);
+        // await db.query("UPDATE users SET steep=1 WHERE chat_id=?", [chatId]);
         let soni = await db.query("SELECT *FROM qanswer WHERE keylist like ? ", ["%" + tx + "%"]);
         bot.sendMessage(chatId, lang["id10"](tx, soni[0].length), {
             reply_markup: {
@@ -70,8 +70,8 @@ const userMessage = async(bot, msg, user) => {
     //'⏳ Бугун'
     if (tx == '⏳ Бугун' || tx == '⏳ Bugun') {
       if(user.address) {
-          console.log(key.share)
-          bot.sendPhoto(chatId, "https://ramazanuz.herokuapp.com/"+user.address, {
+          console.log(user.address)
+          bot.sendPhoto(chatId, "https://unnamed.incrm.uz/"+user.address, {
               caption: lang["id12"],
               parse_mode: "HTML",
               // reply_markup: key.share,
@@ -135,8 +135,7 @@ const userMessage = async(bot, msg, user) => {
 
      //error >  hozicha
     if ( tx == "Asmaul husna" || tx == '☝️Maruzalar' || tx=='✍️ Ismga tabrik'
-         || tx=='☝️Марузалар' || tx=="Aсмаул ҳусна" || tx=='✍️ Исмга табрик'
-         || tx == "📖 Qur'on tilovati va darslari" || tx == "📖 Қуръон тиловати ва дарслари") {
+         || tx=='☝️Марузалар' || tx=="Aсмаул ҳусна" || tx=='✍️ Исмга табрик') {
         bot.sendMessage(chatId, lang["err"], {
             parse_mode: "HTML"
         })
