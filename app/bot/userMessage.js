@@ -122,7 +122,7 @@ const userMessage = async(bot, msg, user) => {
 
 
     //"Qur'on" =>"Qur'on tilovati"
-    if (tx=="Qur'on tilovati"  || tx=="Қуръон тиловати") {
+    if (tx=="Qur'on tilovati" || tx=="Қуръон тиловати") {
         let qt= await db.query("SELECT *FROM qtilovat ");
         let mtx = "";
         for(let i=0;i<qt[0].length;i++) mtx+=qt[0][i].id+") "+qt[0][i].name+"\n" ;
@@ -133,7 +133,20 @@ const userMessage = async(bot, msg, user) => {
     }
 
 
-     //error >  hozicha
+    //"Qur'on" =>"Qur'on tilovati"
+    if (tx=="Қуръон дарслари"  || tx=="Qur'on darslari") {
+        let qt= await db.query("SELECT *FROM qdars ");
+        let mtx = "";
+        for(let i=0;i<qt[0].length;i++) mtx+=qt[0][i].id+") "+qt[0][i].name+"\n" ;
+        bot.sendMessage(chatId, mtx , {
+            parse_mode: "HTML" ,
+            reply_markup: key.qt(qt[0],"qdars"),
+        })
+    }
+
+
+
+    //error >  hozicha
     if ( tx == "Asmaul husna" || tx == '☝️Maruzalar' || tx=='✍️ Ismga tabrik'
          || tx=='☝️Марузалар' || tx=="Aсмаул ҳусна" || tx=='✍️ Исмга табрик') {
         bot.sendMessage(chatId, lang["err"], {

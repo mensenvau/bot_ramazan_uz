@@ -64,6 +64,16 @@ const userCallback = async(bot, msg, user) => {
         })
         return;
     }
+
+    if(isData=="qdars"){
+        let did = data.replace("qdars", "");
+        let qtid = await db.query("SELECT *FROM qdars WHERE id=?", [did]);
+        bot.sendMessage(chatId, qtid[0][0].mtext, {
+            parse_mode: "HTML",
+            reply_markup: key.start
+        })
+        return;
+    }
 }
 
 
